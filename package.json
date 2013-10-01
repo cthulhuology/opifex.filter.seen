@@ -1,0 +1,21 @@
+{
+	"author": "David Goehrig",
+	"name": "opifex.filter.seen",
+	"license" : "MIT",
+	"description": "Pipes messages from source to destination filtering out ones it has seen recently",
+	"version": "0.0.1",
+	"repository": {
+		"url": "http://github.com/cthulhuology/opifex.filter.seen"
+	},
+	"main": "./lib/Filter.Seen.coffee",
+	"bin": {},
+	"dependencies": {
+		"opifex" : ">=0.0.6"
+	},
+	"devDependencies": {},
+	"optionalDependencies": {},
+	"engines": {
+		"node": "*"
+	}
+}
+
