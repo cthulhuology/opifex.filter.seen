@@ -9,14 +9,10 @@ Seen = () ->
 	self.seen = {}
 	self['.filter'] = (x) -> x.id || x.guid || x
 	self.filter = (code...) ->
-		console.log "got #{ JSON.stringify(code) }"
 		self[".filter"] = Function.prototype.constructor.apply(self,code)
-		console.log "Filtering with #{ self[".filter"] }"
 	self["*"] = (message...) ->
 		item = this['.filter']?.apply(self,message)
-		if self.seen[item]
-			console.log "Filtered out #{item}"
-		else
+		if not self.seen[item]
 			self.seen[item] = self.duration
 			self.send message
 	self.purge = (k) ->
